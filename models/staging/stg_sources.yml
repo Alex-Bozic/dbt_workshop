@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: stg_sources
+    description: Source database.
+    database: DEMO_DB_MELA
+    schema: RAW
+    tables:
+      - name: DBT_CUSTOMERS
+        description: Source table with one record per customer.
+      - name: DBT_ORDERS
+        description: Source table with one record per order.
+      - name: DBT_PAYMENTS
+        description: Source table with payments for all orders. 

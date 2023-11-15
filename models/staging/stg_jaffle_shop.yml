@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: One record per customer. Aded order dates andnumber of orders per customer.
+  - name: fct_orders
+    description: Fact orders.
+
+  - name: stg_customers
+    description: This model cleans up customer data.
+  - name: stg_orders
+    description: This model cleans up order data.
+  - name: stg_payments
+    description: This model cleans up pamyents data.
