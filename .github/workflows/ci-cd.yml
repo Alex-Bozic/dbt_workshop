@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+  workflow_dispatch:
+
+
+env:
+  DBT_PROFILES_DIR: ./
+  DBT_USER: ${{ secrets.DBT_USER }}
+  DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+  DBT_ROLE: IN516HT_WORK
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: install dbt-snowflake
+        run: pip install dbt-snowflake
+
+      - name: dbt deps
+        run: dbt deps
+
+      - name: dbt seeds
+        run: dbt seed
+
+      - name: source freshness
+        run: dbt source freshness
+        continue-on-error: true
+
+      - name: dbt test
+        run: dbt test
+
+      - name: dbt build
+        run: dbt build
