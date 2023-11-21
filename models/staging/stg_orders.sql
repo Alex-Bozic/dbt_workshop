@@ -4,3 +4,4 @@ select
     order_date,
     status
 from {{ source('stg_sources', 'DBT_ORDERS') }}
+{{ limit_data_in_dev('order_date') }}
