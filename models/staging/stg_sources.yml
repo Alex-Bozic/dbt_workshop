@@ -3,10 +3,10 @@ version: 2
 sources:
   - name: stg_sources
     description: Source database.
-    database: DEMO_DB_MELA
+    database: DBT_DEMO
     schema: RAW
     tables:
-      - name: DBT_CUSTOMERS
+      - name: CUSTOMERS
         description: Source table with one record per customer.
         columns: 
           - name: id
@@ -14,7 +14,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: DBT_ORDERS
+      - name: ORDERS
         description: Source table with one record per order.
         columns: 
           - name: id
@@ -22,7 +22,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: DBT_PAYMENTS
+      - name: PAYMENTS
         description: Source table with payments for all orders. 
         loaded_at_field: created_at
         freshness: 

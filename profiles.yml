@@ -2,12 +2,12 @@ dbt_demo:
   outputs:
     dev:
       type: snowflake
-      account: uz47229.eu-central-1
+      account: vz97431.west-europe.azure
       # User/password auth
       user: "{{ env_var('DBT_USER') }}"
       password: "{{ env_var('DBT_PASSWORD')}}"
-      role: IN516HT_WORK
-      database: DEMO_DB_MELA
-      warehouse: IN516HT
+      role: SYSADMIN
+      database: DBT_DEMO
+      warehouse: STANDARD_XS
       schema: DBT
   target: dev
