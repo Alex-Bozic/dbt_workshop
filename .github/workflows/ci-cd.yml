@@ -37,6 +37,9 @@ jobs:
         run: dbt source freshness
         continue-on-error: true
 
+      - name: dbt snapshot
+        run: dbt snapshot
+
       - name: dbt test
         run: dbt test
 
