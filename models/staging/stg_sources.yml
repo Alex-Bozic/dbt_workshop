@@ -28,3 +28,5 @@ sources:
         freshness: 
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+seeds:
+  - name: country_codes
