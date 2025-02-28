@@ -3,10 +3,10 @@ dbt_demo:
     dev:
       type: snowflake
       account: vz97431.west-europe.azure
-      # User/password auth
       user: "{{ env_var('DBT_USER') }}"
-      password: "{{ env_var('DBT_PASSWORD')}}"
-      role: SYSADMIN
+      role: ACCOUNTADMIN
+      private_key: "{{ env_var('DBT_PRIVATEKEY') }}"
+      private_key_passphrase: "{{ env_var('DBT_PASSPHRASE') }}"
       database: DBT_DEMO
       warehouse: STANDARD_XS
       schema: DBT
