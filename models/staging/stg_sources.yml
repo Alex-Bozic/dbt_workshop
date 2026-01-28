@@ -22,7 +22,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: PAYMENTS
+      - name: PAYMENT
         description: Source table with payments for all orders. 
         loaded_at_field: created_at
         freshness: 

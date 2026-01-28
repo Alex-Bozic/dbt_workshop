@@ -1,22 +1,19 @@
+
 with orders as (
 
     select * from {{ ref('stg_orders') }}
 
 ),
 
-payments as (
+customers as (
 
-    select * from {{ ref('stg_payments') }}
+    select * from {{ ref('dim_customer') }}
 
 ),
-
 order_payments as (
 
-    select 
-        order_id,
-        sum(amount) as amount
-    from payments
-    group by 1
+    
+    select * from {{ ref('int_order_payments') }}
 
 ),
 
@@ -24,11 +21,12 @@ final as (
 
     select
         orders.order_id,
-        orders.customer_id,
+        customers.dim_customer_id,
         orders.order_date,
         coalesce(order_payments.amount, 0) as amount
     from orders
     left join order_payments using (order_id)
+    left join customers using (customer_id)
 
 )
 

@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: Fact orders
+    columns:
+      - name: dim_customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: dim_customer_id

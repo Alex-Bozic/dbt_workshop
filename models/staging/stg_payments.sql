@@ -6,7 +6,7 @@
 
 select
     id as payment_id,
-    order_id,
-    payment_method,
+    orderid,
+    paymentmethod,
     {{ cents_to_dollars('amount') }} as amount
-from {{ source('stg_sources', 'PAYMENTS') }}
+from {{ source('stg_sources', 'PAYMENT') }}

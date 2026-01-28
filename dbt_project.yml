@@ -33,7 +33,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_demo:
     marts:
-      core:
+      dimensions:
         +materialized: table
+      faczs:
+        +materialized: merge
     staging:
       +materialized: view
