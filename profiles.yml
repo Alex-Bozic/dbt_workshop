@@ -1,9 +1,0 @@
-dbt_demo:
-  outputs:
-    dev:
-      type: snowflake
-      role: dev_dbt
-      database: DBT_DEMO
-      warehouse: COMPUTE_WH
-      schema: DBT
-  target: dev
