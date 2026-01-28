@@ -22,3 +22,19 @@
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+
+
+
+
+## Setup
+
+- clone repository to desired folder
+- Set up python env: `python3.12 -m venv venv`
+- go to env: `venv\Scripts\activate`
+- install dbt `pip install dbt-core==1.9.4 dbt-snowflake==1.9.2`
+- edit `profiles.yml`, check [dbt documentation](https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml#example-configuration) what is needed
+
+
+
+

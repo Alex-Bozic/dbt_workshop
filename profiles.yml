@@ -1,0 +1,13 @@
+dbt_demo:
+  outputs:
+    dev:
+      type: snowflake
+      account: JTIRHKD-KV17832
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      role: dev_dbt
+      database: DBT_DEMO
+      warehouse: COMPUTE_WH
+      schema: DBT
+  target: dev
+

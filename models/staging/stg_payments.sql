@@ -6,6 +6,7 @@
 
 select
     id as payment_id,
+    orderid as order_id,
     orderid,
     paymentmethod,
     {{ cents_to_dollars('amount') }} as amount

@@ -1,3 +1,9 @@
+{{
+  config(
+    unique_key='order_id',
+    incremental_strategy='merge')
+}}
+
 
 with orders as (
 
@@ -31,3 +37,6 @@ final as (
 )
 
 select * from final
+{% if is_incremental() %}
+    where order_date > (select max(order_date) from {{ this }})
+  {% endif %}

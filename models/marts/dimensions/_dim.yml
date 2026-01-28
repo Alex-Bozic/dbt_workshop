@@ -2,4 +2,10 @@ version: 2
 
 models:
   - name: dim_customer
-    description: One record per customer. 
+    description: Dimension contains customer, their ID and names
+    columns: 
+      - name: dim_customer_id
+        description: The column contains SID for the table.
+        tests:
+        - unique
+        - not_null

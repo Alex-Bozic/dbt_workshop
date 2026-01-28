@@ -8,5 +8,5 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_customers')
+              to: ref('dim_customer')
               field: dim_customer_id
