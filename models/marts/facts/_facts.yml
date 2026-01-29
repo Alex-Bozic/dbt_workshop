@@ -4,9 +4,9 @@ models:
   - name: fact_orders
     description: Fact orders
     columns:
-      - name: dim_customer_id
+      - name: cust_sid
         tests:
           - not_null
           - relationships:
               to: ref('dim_customer')
-              field: dim_customer_id
+              field: customer_sid

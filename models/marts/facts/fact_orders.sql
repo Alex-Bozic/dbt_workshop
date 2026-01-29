@@ -1,13 +1,13 @@
 {{
   config(
-    unique_key='order_id',
+    unique_key=['order_id', 'cust_sid'],
     incremental_strategy='merge')
 }}
 
 
 with orders as (
 
-    select * from {{ ref('stg_orders') }}
+    select * from {{ ref('raw_orders') }}
 
 ),
 
@@ -27,7 +27,7 @@ final as (
 
     select
         orders.order_id,
-        customers.dim_customer_id,
+        customers.customer_sid as cust_sid,
         orders.order_date,
         coalesce(order_payments.amount, 0) as amount
     from orders

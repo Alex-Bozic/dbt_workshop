@@ -6,14 +6,7 @@ sources:
     database: DBT_DEMO
     schema: RAW
     tables:
-      - name: CUSTOMERS
-        description: Source table with one record per customer.
-        columns: 
-          - name: id
-            description: Primary key for customers data.
-            tests:
-              - unique
-              - not_null
+      - name: customers
       - name: ORDERS
         description: Source table with one record per order.
         columns: 

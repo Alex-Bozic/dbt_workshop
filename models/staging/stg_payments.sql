@@ -10,4 +10,4 @@ select
     orderid,
     paymentmethod,
     {{ cents_to_dollars('amount') }} as amount
-from {{ source('stg_sources', 'PAYMENT') }}
+from dbt_demo.raw.payment

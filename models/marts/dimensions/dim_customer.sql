@@ -5,8 +5,8 @@ with customers as (
 )
 
 select
-    MD5_NUMBER_UPPER64(customer_id) as dim_customer_id,
     customer_id,
+    MD5_NUMBER_UPPER64(customer_id) as customer_sid,
     first_name,
-    last_name
+    last_name,
 from customers

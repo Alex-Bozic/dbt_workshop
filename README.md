@@ -38,3 +38,11 @@
 
 
 
+### Issues to fix:
+
+- rename stg_orders.sql to raw_orders.sql and changed in fact_orders.sql the ref()
+- changed customers table in sources and stg_customers to lower case
+- changed payment from using source() to direct reference to table
+- sources cusomers removed all but the table name - add back
+- dim_customer renamed dim_customer_id and all references  (rerun with --full-refresh)
+- renamed intermediate table to int and all references

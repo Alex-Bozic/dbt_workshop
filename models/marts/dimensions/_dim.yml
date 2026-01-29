@@ -4,7 +4,7 @@ models:
   - name: dim_customer
     description: Dimension contains customer, their ID and names
     columns: 
-      - name: dim_customer_id
+      - name: customer_sid
         description: The column contains SID for the table.
         tests:
         - unique
