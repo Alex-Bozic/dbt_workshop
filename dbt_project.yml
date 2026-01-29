@@ -34,8 +34,8 @@ models:
     int:
       +materialized: view
     marts:
+      +materialized: table
       dimensions:
-        +materialized: table
       facts:
         +materialized: incremental
     staging:
