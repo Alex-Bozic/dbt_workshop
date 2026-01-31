@@ -32,10 +32,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_demo:
+    intermediate:
+      +schema: dbt_int
+      +materialized: view
     marts:
+      +schema: dbt_dp
       dimensions:
         +materialized: table
       facts:
         +materialized: incremental
     staging:
+      +schema: dbt_stg
       +materialized: view

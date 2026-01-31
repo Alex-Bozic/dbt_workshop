@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: stg_sources
     description: Source database.
-    database: DBT_DEMO
+    database: DBT_RAW
     schema: RAW
     tables:
       - name: CUSTOMERS
