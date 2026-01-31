@@ -6,8 +6,8 @@ dbt_demo:
       user: "{{ env_var('DBT_USER') }}"
       password: "{{ env_var('DBT_PASSWORD') }}"
       role: dev_dbt
-      database: DBT_DEMO
+      database: PIF_DBT
       warehouse: COMPUTE_WH
-      schema: DBT
+      schema: DBT_STG
   target: dev
 

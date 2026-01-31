@@ -32,11 +32,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_demo:
     int:
+      +schema: dbt_int
       +materialized: view
     marts:
+      +schema: dbt_dp
       +materialized: table
       dimensions:
       facts:
         +materialized: incremental
     staging:
+      +schema: dbt_stg
       +materialized: view
