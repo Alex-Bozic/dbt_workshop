@@ -1,6 +1,6 @@
 {{
   config(
-    unique_key='order_id',
+    unique_key=['order_id', 'dim_customer_id'],
     incremental_strategy='merge')
 }}
 
