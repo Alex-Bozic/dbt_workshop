@@ -3,8 +3,6 @@ dbt_demo:
     dev:
       type: snowflake
       account: JTIRHKD-KV17832
-      user: "{{ env_var('DBT_USER') }}"
-      password: "{{ env_var('DBT_PASSWORD') }}"
       role: dev_dbt
       database: PIF_DBT
       warehouse: COMPUTE_WH
