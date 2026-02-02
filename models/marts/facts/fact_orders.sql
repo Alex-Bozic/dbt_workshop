@@ -7,19 +7,31 @@
 
 with orders as (
 
-    select * from {{ ref('stg_orders') }}
+    select
+        order_id,
+        customer_id,
+        order_date,
+        status
+    from {{ ref('stg_orders') }}
 
 ),
 
 customers as (
 
-    select * from {{ ref('dim_customer') }}
+    select
+        dim_customer_id,
+        first_name,
+        last_name
+    from {{ ref('dim_customer') }}
 
 ),
+
 order_payments as (
 
-    
-    select * from {{ ref('int_order_payments') }}
+    select
+        order_id,
+        amount
+    from {{ ref('int_order_payments') }}
 
 ),
 
@@ -38,5 +50,5 @@ final as (
 
 select * from final
 {% if is_incremental() %}
-    where order_date > (select max(order_date) from {{ this }})
-  {% endif %}
+    where order_date > (select max(final.order_date) from {{ this }})
+{% endif %}

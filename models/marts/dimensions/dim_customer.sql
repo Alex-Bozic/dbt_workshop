@@ -1,12 +1,16 @@
 with customers as (
 
-    select * from {{ ref('stg_customers') }}
+    select
+        customer_id,
+        first_name,
+        last_name
+    from {{ ref('stg_customers') }}
 
 )
 
 select
-    MD5_NUMBER_UPPER64(customer_id) as dim_customer_id,
+    MD5_NUMBER_UPPER64(customer_id) as dim_customer_id
     customer_id,
     first_name,
-    last_name
+    last_name,
 from customers
