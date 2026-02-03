@@ -9,7 +9,7 @@ with customers as (
 )
 
 select
-    MD5_NUMBER_UPPER64(customer_id) as dim_customer_id
+    {{ dbt_utils.generate_surrogate_key(['customer_id']) }} as dim_customer_id,
     customer_id,
     first_name,
     last_name,

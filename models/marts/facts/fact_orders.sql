@@ -20,6 +20,7 @@ customers as (
 
     select
         dim_customer_id,
+        customer_id,
         first_name,
         last_name
     from {{ ref('dim_customer') }}
@@ -50,5 +51,5 @@ final as (
 
 select * from final
 {% if is_incremental() %}
-    where order_date > (select max(final.order_date) from {{ this }})
+    where order_date > (select max(order_date) from {{ this }})
 {% endif %}

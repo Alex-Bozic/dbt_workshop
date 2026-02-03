@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_order_payments.sql
+  - name: int_order_payments
     description: Intermediate calculation to caluculate payed amount per order
     columns: 
       - name: order_id
